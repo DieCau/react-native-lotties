@@ -25,8 +25,8 @@ export default function index() {
         ref={carlottie}
         style={styles.lottie}
       />
-      <View>
-        <TouchableOpacity style={ styles.buttonsWrapper } onPress={stopVan}>
+      <View style={styles.buttonsWrapper}>
+        <TouchableOpacity style={styles.button} onPress={stopVan}>
           <IconSymbol name="pause" size={50} color="#fff" />
         </TouchableOpacity>
       </View>
