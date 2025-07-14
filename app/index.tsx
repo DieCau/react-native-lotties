@@ -29,6 +29,9 @@ export default function index() {
         <TouchableOpacity style={styles.button} onPress={stopVan}>
           <IconSymbol name="pause" size={50} color="#fff" />
         </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={startVan}>
+          <IconSymbol name="play" size={50} color="#fff" />
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
