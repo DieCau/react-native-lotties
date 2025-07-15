@@ -15,6 +15,9 @@ export default function index() {
   function startVan() {
     carlottie.current?.play();
   }
+  function swapVan() {
+    carlottie.current?.reset();
+  }
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -31,6 +34,9 @@ export default function index() {
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={startVan}>
           <IconSymbol name="play" size={50} color="#fff" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={swapVan}>
+          <IconSymbol name="repeat" size={50} color="#fff" />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
