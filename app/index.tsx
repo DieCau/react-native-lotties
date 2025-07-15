@@ -1,17 +1,24 @@
-import LottieView from 'lottie-react-native'; // Ensure you have this package installed
-import { SafeAreaView } from "react-native";
+import LottieView from 'lottie-react-native';
+import { SafeAreaView, StyleSheet } from "react-native";
 
-import car from '../assets/lotties/car.json';
+import lotti from '@/assets/lotties/Mu7pHUymUo.json';
 
 export default function index() {
   return (
-    <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <LottieView        
-        source={car}
-        autoPlay
-        loop
-        style={{ width: 200, height: 200 }}
-      />
+    <SafeAreaView style={styles.safeArea}>
+      <LottieView source={lotti} autoPlay loop style={{ height: "100%" }} />
     </SafeAreaView>
-  )
+  );
 }
+
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: "#000",
+  },
+  lottie: {
+    width: "100%",
+    height: 250,
+  },
+});
