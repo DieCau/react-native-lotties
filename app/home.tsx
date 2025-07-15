@@ -1,16 +1,22 @@
 import LottieView from "lottie-react-native";
 import { SafeAreaView, StyleSheet } from "react-native";
 
+import astronaut from '@/assets/lotties/astronaut.json';
 import passport from '@/assets/lotties/passport.json';
+import { useState } from "react";
 
 export default function home() {
+
+  const [isTraveling, setIsTraveling] = useState(false)
+
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <LottieView
-        source={passport}
+        source={isTraveling ? astronaut : passport}
         autoPlay
-        loop
-        style={(styles.lottie, { height: '80%'  })}
+        loop={false}
+        style={(styles.lottie, { height: "80%" })}
       />
     </SafeAreaView>
   );
