@@ -10,10 +10,10 @@ export default function home() {
         source={passport}
         autoPlay
         loop
-        style={styles.lottie}
-      /> 
+        style={(styles.lottie, { height: '80%'  })}
+      />
     </SafeAreaView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
