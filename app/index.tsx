@@ -3,20 +3,28 @@ import LottieView from "lottie-react-native";
 import { SafeAreaView, StyleSheet, TouchableOpacity, View } from "react-native";
 
 import van from "@/assets/lotties/car.json";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function index() {
+  const [isSwapped, setIsSwapped] = useState(false);
 
   const carlottie = useRef<LottieView>(null);
-  
+
   function stopVan() {
     carlottie.current?.pause();
   }
+
   function startVan() {
     carlottie.current?.play();
   }
+
   function swapVan() {
-    carlottie.current?.reset();
+    if (isSwapped) {
+      carlottie.current?.play();
+    } else {
+      carlottie.current?.play(181, 0);
+    }
+    setIsSwapped(!isSwapped);
   }
 
   return (
