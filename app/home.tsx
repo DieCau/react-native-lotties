@@ -16,7 +16,7 @@ export default function home() {
         source={isTraveling ? astronaut : passport}
         autoPlay
         loop={false}
-        style={(styles.lottie, { height: "80%" })}
+        style={(styles.lottie, { height: isTraveling ? "100%" : "80%" })}
       />
     </SafeAreaView>
   );
