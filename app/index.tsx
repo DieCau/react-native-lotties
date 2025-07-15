@@ -15,7 +15,11 @@ export default function index() {
   }
 
   function startVan() {
-    carlottie.current?.play();
+    if (isSwapped) {
+      carlottie.current?.play(0, 181);      
+    } else {
+      carlottie.current?.play();
+    }
   }
 
   function swapVan() {
