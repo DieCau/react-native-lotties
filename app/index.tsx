@@ -1,8 +1,8 @@
+import van from '@/assets/lotties/car.json';
 import { IconSymbol } from "@/components/ui/IconSymbol";
 import LottieView from "lottie-react-native";
 import { SafeAreaView, StyleSheet, TouchableOpacity, View } from "react-native";
 
-import van from "@/assets/lotties/car.json";
 import { Link } from "expo-router";
 import { useRef, useState } from "react";
 
@@ -33,6 +33,7 @@ export default function index() {
   }
 
   return (
+
     <SafeAreaView style={styles.safeArea}>
       <LottieView
         source={van}

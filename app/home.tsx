@@ -1,18 +1,15 @@
+import astronaut from "@/assets/lotties/astronaut.json";
+import passport from "@/assets/lotties/passport.json";
 import LottieView from "lottie-react-native";
+import { useState } from "react";
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity } from "react-native";
 
-import astronaut from '@/assets/lotties/astronaut.json';
-import passport from '@/assets/lotties/passport.json';
-import { useState } from "react";
-
 export default function home() {
+  const [isTraveling, setIsTraveling] = useState(false);
 
   function startTravel() {
-    setIsTraveling(true)
+    setIsTraveling(true);
   }
-
-  const [isTraveling, setIsTraveling] = useState(false)
-
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -22,16 +19,11 @@ export default function home() {
         loop={isTraveling}
         style={(styles.lottie, { height: isTraveling ? "100%" : "80%" })}
       />
-      { isTraveling && 
-      <TouchableOpacity
-        style={styles.travelButton}
-        onPress={startTravel}
-      >
-        <Text>
-          Iniciar Viaje
-        </Text>
-      </TouchableOpacity>
-      }
+      {!isTraveling && (
+        <TouchableOpacity style={styles.travelButton} onPress={startTravel}>
+          <Text>Iniciar Viaje</Text>
+        </TouchableOpacity>
+      )}
     </SafeAreaView>
   );
 }
@@ -43,12 +35,12 @@ const styles = StyleSheet.create({
   },
   lottie: {
     width: "100%",
-  }, 
+  },
   travelButton: {
     width: "100%",
-    alignItems: "center",
-    backgroundColor: "#007AFF",
-    padding: 10,
+    backgroundColor: "#057fc5ff",
     borderRadius: 8,
-  },     
-})  
+    padding: 10,
+    alignItems: "center",
+  },
+});
