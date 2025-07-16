@@ -19,9 +19,10 @@ export default function home() {
       <LottieView
         source={isTraveling ? astronaut : passport}
         autoPlay
-        loop={false}
+        loop={isTraveling}
         style={(styles.lottie, { height: isTraveling ? "100%" : "80%" })}
       />
+      { isTraveling && 
       <TouchableOpacity
         style={styles.travelButton}
         onPress={startTravel}
@@ -30,6 +31,7 @@ export default function home() {
           Iniciar Viaje
         </Text>
       </TouchableOpacity>
+      }
     </SafeAreaView>
   );
 }
@@ -41,12 +43,12 @@ const styles = StyleSheet.create({
   },
   lottie: {
     width: "100%",
-    height: 200,
   }, 
   travelButton: {
+    width: "100%",
+    alignItems: "center",
     backgroundColor: "#007AFF",
     padding: 10,
-    borderRadius: 5,
-    marginTop: 20,    
+    borderRadius: 8,
   },     
 })  
